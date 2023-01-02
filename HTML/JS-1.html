@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Largest NUmber</title>
+        <style>
+            #btn:hover{
+                background-color: greenyellow;
+                scale: 1.05;
+            }
+            .input:hover{
+                background-color: aquamarine;
+                scale: 1.05;
+            }
+        </style>
+        <script>
+        function getmax(){
+            alert("In fun")
+            var e1 = parseInt(document.getElementById("n1").value) 
+            var e2 = parseInt(document.getElementById("n2").value) 
+            var e3 = parseInt(document.getElementById("n3").value) 
+
+        if((e1>=e2) && (e1>=e3)) {
+            document.getElementById("ans").value=e1;
+            }
+        else if((e2>=e3) && (e2>=e1))  {
+            document.getElementById("ans").value=e2;
+            }
+        else{
+            document.getElementById("ans").value=e2;
+            }
+        }
+    </script>
+    </head>
+    <body>
+        <label for="n1">Number1: </label>
+        <input type="text" class="input" name="num1" id="n1" autofocus
+            placeholder="Enter 1st Number">
+        <label for="n2">Number2: </label>
+        <input type="text" class="input" name="num2" id="n2" placeholder="Enter
+            2nd Number">
+        <label for="n3">Number3: </label>
+        <input type="text" class="input" name="num3" id="n3" placeholder="Enter
+            3rd Number">
+        <button type="button" name="btn" id="btn" value="Get Max Number"
+            onclick="getmax()">Get Max Number</button>
+        <label for="ans">Ans: </label>
+        <input type="text" name="ans" id="ans">
+    </body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compound Interest</title>
+</head>
+<script>
+    function ci(){
+        let p = parseInt(document.getElementById("pr").value);
+        let r = parseInt(document.getElementById("roi").value);
+        let n = parseInt(document.getElementById("yr").value);
+        let sum = 1+(r/100);
+        for(i=1;i<n;i++){
+            sum = sum * sum;
+        }
+        let ci=(p*sum)-p;
+        document.getElementById("n").value=ci.toFixed(2);
+    }
+</script>
+<body>
+    <h2 style="text-align: center;">Calculate Compound Interest</h2>
+    <table style="border: 2px solid red; margin: auto;">
+        <tr>
+            <td>Pricipal- </td>
+            <td><input type="number" id="pr">Rs</td>
+        </tr>
+        <tr>
+            <td>Rate of Interest- </td>
+            <td><input type="number" id="roi">%</td>
+        </tr>
+        <tr>
+            <td>Period- </td>
+            <td><input type="number" id="yr">Yr</td>
+        </tr>
+        <tr>
+            <td>Compound Interest- </td>
+            <td><input type="number" id="n"></td>
+        </tr>
+        <tr>
+            <td colspan="2" align="center">
+                <button type="button" id="btn" onclick="ci()">Find Compund Interest</button>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <body>
+        Insert 6 Names:
+        <button type="button" id="btn" onclick="insert()"> Insert </button>
+        <br>
+        <br>
+        <button type="button" id="sort" onclick="sort()">Sort</button>
+        <br>
+        <div id="arr">
+            <h4>Unsorted List</h4>
+        </div>
+        <br>
+        <h4>Sorted List</h4>
+        <textarea name="list" id="list" cols="30" rows="10" placeholder="Sorted List"></textarea>
+        <script>
+            var arr=[];
+            function insert(){
+                for(let i=0;i<2;i++){
+                arr[i]=prompt("Enter Name "+(i+1)+": ");
+            }   
+            for(var x of arr)
+                document.getElementById("arr").innerHTML+=x+"<br>";
+            }
+            function sort(){
+                var s=arr.sort();
+                document.getElementById("list").value="";
+                alert("List Sorted!!!")
+                document.getElementById("list").value=s;
+            }
+        </script>
+    </body>
+</html>
