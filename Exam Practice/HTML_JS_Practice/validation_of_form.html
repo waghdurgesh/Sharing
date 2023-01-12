@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .errClass{
+            border: 2px solid red;
+        }
+
+        .myClass{
+            border: 2px solid green;
+        }
+    </style>
+</head>
+<script>
+  function validateUser()
+  {
+    uname=document.getElementById("user").value;
+    if(uname.trim().length==0)
+    {
+        document.getElementById("userrr").innerHTML="UserName is Mandatory";
+        document.getElementById("user").className="errClass";
+        return false;
+    }
+    else{
+        document.getElementById("userrr").innerHTML="";
+        document.getElementById("user").className="myClass";
+        return true;
+    }
+  }
+  function validatePassword()
+  {
+    pwd=document.getElementById("pass").value;
+    if(pwd.trim().length==0)
+    {
+        document.getElementById("paserrr").innerHTML="Password  is Mandatory";
+        document.getElementById("pass").className="errClass";
+        return false;
+    }
+    else{
+        document.getElementById("paserrr").innerHTML="";
+        document.getElementById("pass").className="myClass";
+        return true;
+    }
+  }
+
+  function validateData()
+  {
+    flag =validateUser();
+    flag1=validatePassword();
+    if(flag && flag1)
+    {
+        return true;
+    }
+    else{
+        return false;
+    }
+  }
+</script>
+<body>
+   <form onsubmit="return validateData()">
+    <table>
+    <tr>
+        <td>user : </td>
+        <td><input type="text" id="user" name="user"></td>
+        <td id="userrr"></td>
+    </tr>
+    <tr>
+        <td>Password : </td>
+        <td><input type="password" id="pass" name="pass"></td> 
+        <td id="paserrr"></td>
+    </tr>
+   <tr>
+    <td></td>
+    <td><button type="submit" id="btn" name="btn">Login</button></td>
+    <td></td>
+   </tr>
+</table>
+   </form>
+</body>
+</html>

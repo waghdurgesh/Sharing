@@ -1,0 +1,36 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Student Info</title>
+</head>
+<body>
+    <form id = "new"class="for_form">
+        <div class="form_body">
+        <h2>Student Registration</h2>
+        <div class="msg"></div>
+        <div>
+            <label class="for_label" for="nm">Name</label>
+            <input class="for_input" type="text" id="nm" required autofocus VALUE="DURGESH">
+        </div>
+        <div>
+            <label class="for_label" for="add">Address</label>
+            <input class="for_input" type="text" id="add" required VALUE="NASHIK">
+        </div>
+        <div>
+            <label class="for_label" for="hob">Hobbies</label>
+            <input class="for_input" type="text" id="hob" required VALUE="PHOTOGRAPHY">
+        </div>
+        <button class="btn1" type="button"  onclick="AddObject()">Add Object</button>
+        <button class="btn2" type="button" onclick="DisplayObject()">Display object</button>
+    </div>
+    <div id="output"></div>
+    </form>
+    
+</body>
+<script src="main.js"></script>
+</html>

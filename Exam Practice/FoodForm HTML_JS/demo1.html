@@ -1,0 +1,166 @@
+<html>
+    <head>
+     
+     
+    </head>
+    
+    <body>
+        <form id="my_form" >
+            <table>
+              
+                <tr>
+                  <td><label for="nm">Name</label></td>
+                  <td><input type="text" id="nm" name="nm" required></td>
+                  <td id="nmerr"></td>
+                </tr>
+                <tr>
+                    <td><label for="dt">Birth Date</label></td>
+                    <td><input type="date" id="dt" name="dt" max="2022-12-17" ></td>
+                  </tr>
+                  <tr>
+                    <td><label for="em">Email</label></td>
+                    <td><input type="text" id="em" name="em"></td>
+                    <td id="emerr"></td>
+                  </tr>
+                  <tr>
+                    <td><label for="gen">Gender</label></td>
+                    <td><input type="radio" id="gen1" name="gen" value="male">Male<br>
+                        <input type="radio" id="gen2" name="gen" value="female">Female</td>
+                  </tr>
+                  <tr>
+                    <td><label for="num">Lucky Number</label></td>
+                    <td><input type="number" id="num" name="num" ></td>
+                    <td id="numerr"></td>
+                  </tr>
+                  <br>
+                  <br>
+                  <br>
+                  <tr>
+                    <td><label for="food">Favorite Foods</label></td>
+                    <td>
+                    <input type="checkbox" id="f1" name="food" value="Pizza">Pizza<br>
+                    <input type="checkbox" id="f2" name="food" value="Pasta">Pasta<br>
+                    <input type="checkbox" id="f3" name="food" value="Chinese">Chinese
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                        <button type="button" id="btn" name="btn" onclick="validData()">Send Data</button>
+                    </td>
+                  
+                  </tr>
+                  <tr>
+                    <td>
+                      <div id="mydiv"></div>
+                    </td>
+                   
+                  </tr>
+                 
+                
+                
+            </table>
+        </form>
+    </body>
+    <script>
+
+           
+
+      function validData()
+      {
+        flag1=validName();
+        flag2=validEmail();
+        flag3=validNumber();
+
+        if(flag1 && flag2 && flag3)
+        {
+          displayData();
+        }
+      }  
+
+      function validName()
+      {
+          var name=document.getElementById("nm").value;
+          var count=name.length;
+          if(count <= 7)
+          {
+             document.getElementById("nmerr").innerHTML="";
+           
+            return true;
+          }
+          else
+          {
+            document.getElementById("nmerr").innerHTML="(Name must be less than 7 character)";
+            return false;
+           
+          }
+
+      }
+
+      function validEmail()
+      {
+        var mail=document.getElementById("em").value;
+        if(mail.lastIndexOf("@company.com")==-1)
+        {
+          document.getElementById("emerr").innerHTML="(Use format name @company.com)";
+          return false;
+        }
+        else
+        {
+           document.getElementById("emerr").innerHTML="";
+           return true;
+        }
+        lastIndexOf
+
+      }
+
+      function validNumber()
+      {
+        var Lnum=parseInt(document.getElementById("num").value);
+        if(Lnum >= 1 && Lnum <= 100 )
+        {
+          document.getElementById("numerr").innerHTML="";
+          return true;
+        }
+        else
+        {
+          document.getElementById("numerr").innerHTML=" A number between 1 and 100";
+          return false;
+        }
+      }
+
+
+      function displayData()
+      {
+        var name=document.getElementById("nm").value;
+        var mail=document.getElementById("em").value;
+        var date1=document.getElementById("dt").value;
+        var date=(date1.toString());
+       
+        var Lnum=document.getElementById("num").value;
+        var food=document.getElementsByName("food");
+           
+          document.getElementById("mydiv").innerHTML="<h1>You Entered</h1>"+"<br>"+"Name : "+name+"<br>"+"Date of Birth : "+date+"<br>"+"Email : "+mail
+                                                          +"<br>"+"Lucky Number :" +Lnum  +"<br>"+" Food : "+foodie();
+
+          document.getElementById("my_form").reset();
+     
+      }
+
+      function foodie()
+      {
+        var food=document.getElementsByName("food");
+        str=""
+        
+        for(i=0;i<food.length;i++)
+        {
+          if(food[i].checked)
+          {
+            str+=food[i].value;
+          }
+        }
+        return str;
+      }
+
+
+    </script>
+</html>

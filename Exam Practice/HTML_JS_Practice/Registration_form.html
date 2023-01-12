@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+    function validateGender()
+    {
+        genarr=document.getElementsByName("gender");
+        for(var i=0;i<genarr.length;i++)
+        {
+            if(genarr[i].checked)
+            {
+                document.getElementById("generr").innerHTML="";
+                return true;
+            }
+          
+        }
+        document.getElementById("generr").innerHTML="pls select the Gender";
+         return false;
+
+    }
+
+    function validateDegree()
+    {
+        degChecker=document.getElementsByName("deg");
+        for(i=0;i<degChecker.length;i++)
+        if(degChecker[i].checked)
+        {
+            document.getElementById("degerr").innerHTML="";
+            return true;
+        }
+        document.getElementById("degerr").innerHTML="pls select the degree";
+        return false;
+    }
+
+    function validateHobbies()
+    {
+        hobbieChecker=document.getElementsByName("hobb");
+        var count=0;
+        for(i=0;i<hobbieChecker.length;i++)
+        {
+           
+            if(hobbieChecker[i].checked)
+            {
+                count++;
+            }
+            if(count==2)
+            {
+                document.getElementById("hoberr").innerHTML="";
+                return true;
+            }
+           
+        }
+       
+        document.getElementById("hoberr").innerHTML="pls select atlest two hobbies from list";
+            return false;
+    }
+
+    function validateData()
+    {
+        flag1=validateGender();
+        flag2=validateDegree();
+        flag3=validateHobbies();
+        if(flag1 && flag2 && flag3)
+        {
+            return true;
+        }
+        else
+            return false;
+    }
+</script>
+<body>
+    <form >
+        <table>
+           
+            <tr>
+                <td><label for="nm">Name</label></td>
+                <td><input type="text" required></td>
+            </tr>
+      
+           
+            <tr>
+                <td><label for="age">Age</label></td>
+                <td><input type="number" id="age"></td>
+            </tr>
+        
+           
+            <tr>
+                <td><label for="add">Adress</label></td>
+                <td><input type="text" id="add" required></td>
+            </tr>
+       
+           
+            <tr>
+                <td><label for="mob">Mobile</label></td>
+                <td>+91-&nbsp;&nbsp;<input type="number" maxlength="10" minlength="10" id="mob"></td>
+            </tr>
+       
+           
+            <tr>
+                <td><label for="email">Email</label></td>
+                <td><input type="email" id="email"></td>
+            </tr>
+     
+         
+            <tr>
+                <td><label for="jdate">Joining Date</label></td>
+                <td><input type="date" id="jdate"></td>
+            </tr>
+       
+           
+            <tr>
+                <td><label for="gender">Gender</label></td>
+                <td>
+                 <fieldset>
+                 <legend>Gender</legend>
+                <input type="radio" name="gender" id="gender1" value="male">Male<br>
+                <input type="radio" name="gender" id="gender2" value="female">Female
+               </fieldset>
+                </td>
+                <td id="generr"></td>
+            </tr>
+               
+          
+            <tr>
+                <td><label for="deg">Degree</label></td>
+                <td>
+                <fieldset>
+                 <legend>Enter Degree</legend>
+                <input type="radio" name="deg" value="BE">BE <br>
+                <input type="radio" name="deg" value="BTECH">BTECH <br>
+                <input type="radio" name="deg" value="MTECH">MTECH
+            </fieldset>
+                </td>
+                <td id="degerr"></td>
+            </tr>
+     
+        <tr>
+            <td><label for="ct">City</label></td>
+            <td>
+            <select name="city" id="city">
+           <option value="">---select one----</option>
+           <option value="pune">pune</option>
+           <option value="Nashik">nashik</option>
+           <option value="Mumbai">Mumbai</option>
+           <option value="Jalgaon">Jalgaon</option>
+           </select>
+         </td>
+        </tr>
+      
+            <tr>
+                <td><label for="hobb" for="hobb">Hobbies</label></td>
+                <td>
+                    <fieldset>
+                        <legend>Enter Hobbies</legend>
+                    <input type="checkbox" name="hobb" value="reading">reading <br>
+                    <input type="checkbox" name="hobb" value="biking">biking <br>
+                    <input type="checkbox" name="hobb" value="sleeping">sleeping <br>
+                    <input type="checkbox" name="hobb" value="eating">eating <br>
+                    <input type="checkbox" name="hobb" value="treking">treking <br>
+                </fieldset>
+                </td>
+                <td id="hoberr"></td>
+            </tr>
+       <tr>
+        <td>
+        <button type="button" name="btn" id="btn1" value="btn1" onclick="validateData()" >Login</button>&nbsp;&nbsp;
+        <button type="reset" name="btn" id="btn2" value="btn2">Clear</button>
+    </td>
+    </tr>
+        </table>
+    </form>
+</body>
+</html>

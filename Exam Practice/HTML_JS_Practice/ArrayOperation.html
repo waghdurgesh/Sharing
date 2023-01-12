@@ -1,0 +1,93 @@
+<html>
+    <head>
+    <script>
+       var names=[];
+    display=()=>{
+            str= "<ol>";
+            for(var nm of names)
+            {
+               str += "<li>"+ nm +"</li>";
+            }
+            str += "</ol>";
+            document.getElementById("mydiv").innerHTML=str;
+       }
+
+       manageData=()=>
+       {
+           arr=document.getElementsByName("select");
+          
+            for( var i=0;i<arr.length;i++)
+            {
+                if(arr[i].checked)
+                {
+                    choice=arr[i].value;
+                    break;
+                }
+            }
+            switch(choice)
+            {
+                case "add" :
+                    
+                    var store=document.getElementById("nm").value;
+                    names.push(store);
+                    display();
+                    document.getElementById("nm").value="";
+                    
+                break;
+                
+                case "delete" :
+                     var nm=document.getElementById("nm").value;
+                     pos=names.indexOf(nm);
+                     if(pos != -1)
+                     {
+                        names.splice(pos,1);
+                     }
+                     else
+                     {
+                       alert("couldnt find the name");
+                     }
+                     display();
+
+                break;
+
+                case "modify" :
+                  var nm=document.getElementById("nm").value;
+                  var newnm=prompt("enter the name whic you want to replace current one");
+                  pos=names.indexOf(nm);
+                  if(pos != -1)
+                     {
+                        names.splice(pos,1,newnm);
+                     }
+                     else
+                     {
+                        alert("couldnt find the name");
+                     }
+                     display();
+                break;
+
+                case "display" :
+                     display();
+                break;
+                
+
+            }
+            console.log(names);
+       }
+
+
+    </script>
+    </head>
+    <body>
+        <form >
+        Name : <input type="text" name="nm" id="nm" placeholder="Enter the name">
+        <input type="radio" name="select" id="choice1" value="add">Add
+        <input type="radio" name="select" id="choice2" value="delete">Delete
+        <input type="radio" name="select" id="choice3" value="modify">Modify
+        <input type="radio" name="select" id="choice4" value="display">Display
+        <button type="button" id="btn1" name="btn1" onclick="manageData()">Do Action</button>
+        <button type="reset" id="btn2" name="btn2">Reset</button>
+       
+    </form>
+     <div id="mydiv"></div>
+    </body>
+</html>

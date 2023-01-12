@@ -1,0 +1,25 @@
+.for_form {
+  background: linear-gradient(to top, #259e00, #ffffff, #fa4f00);
+  border-radius: 5px;
+  width: 550px;
+  margin: 20px auto;
+  padding: 20px;
+}
+
+.for_formREd {
+  background: linear-gradient(to right, #ff0000, #ff0000);
+  border-radius: 5px;
+  width: 550px;
+  margin: 20px auto;
+  padding: 20px;
+}
+
+input[type=text] {
+  padding: 6px 5px;
+  margin: 8px 0;
+}
+
+input[type=text]:focus {
+  border: 3px solid #555;
+  background-color: yellow;
+}

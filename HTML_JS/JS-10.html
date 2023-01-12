@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curr Date</title>
+</head>
+<body>
+    <div id="x"></div>
+    <script>
+        var end= new Date(2022,11,31)
+        var start= new Date()
+        // var dt= new Date()
+        var day= new Date().toLocaleDateString('en-us', { weekday:"long"}) 
+        var date= new Date().toLocaleDateString('en-us', { day:"numeric"}) 
+        var month= new Date().toLocaleDateString('en-us', { month:"long"})
+        var year= new Date().toLocaleDateString('en-us', {year:"numeric"}) 
+        let h=start.getHours();
+        if(h>6 && h<=12) {var greet="Good Morning"}
+        else if(h>12 && h<=15) {var greet="Good Afernoon"}
+        else if(h>15 && h<=18) {var greet="Good Evening"}
+        else {var greet="Good Night"}
+        var diff=end.getTime()-start.getTime();
+        var days=Math.floor(diff/(1000*60*60*24))
+        document.getElementById("x").innerHTML="Today is "+day+", "+date+" "+month+" "+year+
+        " Welcome, and "+greet+" to You."+"<br>"+"Number of days left till end of year: "+days;
+    </script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<html>
+    <head>
+        <script>
+            function calculate(ob)
+            {
+                var num1=parseInt(document.getElementById("num1").value);
+                var num2=parseInt(document.getElementById("num2").value);
+                switch(ob)
+                {
+                    case "add" :
+                       var result=num1+num2;
+                        document.getElementById("mydiv").innerHTML=`Addition : ${result}`;
+                    break;
+                    case "sub" :
+                       var result=num1-num2;
+                        document.getElementById("mydiv").innerHTML=`Substraction : ${result}`;
+                    break;
+                    case "mul" :
+                       var result=num1*num2;
+                        document.getElementById("mydiv").innerHTML=`Multiplication : ${result}`;
+                    break;
+                    case "div" :
+                       var result=num1/num2;
+                        document.getElementById("mydiv").innerHTML=`Division : ${result}`;
+                    break;
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <form>
+        Number1 : <input type="text" id="num1" name="num1"><br>
+        Number2 : <input type="text" id="num2" name="num2"><br>
+        <button type="button" name="btn" id="btn1" value="add" onclick="calculate('add')">Addition</button>
+        <button type="button" name="btn" id="btn2" value="sub" onclick="calculate('sub')">Substraction</button>
+        <button type="button" name="btn" id="btn3" value="mul" onclick="calculate('mul')">Multiplication</button>
+        <button type="button" name="btn" id="btn4" value="div" onclick="calculate('div')">Division</button>
+        <button type="reset" name="btn" id="btn5">Reset</button>
+        <div id="mydiv">
+
+        </div>
+    </form>
+    </body>
+</html>

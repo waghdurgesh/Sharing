@@ -1,0 +1,35 @@
+<html>
+    <head>
+        <script>
+            function Table(){
+               var num=parseInt(document.getElementById("num").value);
+                if(!isNaN(num))
+                 {
+                    document.getElementById("err").innerHTML="";
+                    document.getElementById("num").setAttribute("style","background-color:white");
+                    for(i=1;i<=10;i++)
+                    {
+                        var result=num*i;
+                        document.getElementById("mydiv").innerHTML+=num +"* "+i+" = "+result+"<br>";
+                    }
+                    
+              }
+              else
+              {
+                        document.getElementById("num").focus();   
+                        document.getElementById("err").innerHTML="pls ensure that table box will not be empty!!";
+                        document.getElementById("num").setAttribute("style","background-color:yellow");
+                                                                   
+                      //  document.getElementById("num").innerHTML.value="";
+              }
+            }
+        </script>
+    </head>
+    <body>
+        
+        <input type="number" id="num" name="num" required >
+        <button type="button" onclick="Table()">Table</button>
+        <div id="err"></div>
+    </body>
+    <div id="mydiv"></div>
+</html>

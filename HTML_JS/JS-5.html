@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>TABLE</title>
+        <script>
+        function table(){{
+            document.getElementById("ans").value=""
+            var n= document.getElementById("num").value;
+
+            if (n<=0){
+                document.getElementById("ans").value+="Enter Correct value !!! ";
+            }else{
+            for(i=1;i<=10;i++){
+                document.getElementById("num").value=""
+                document.getElementById("ans").value+=n+"*"+i+"= "+(n*i)+"\n";
+            }
+        }
+        }}
+    </script>
+    </head>
+    <body>
+        <label for="num">Enter Table No.</label>
+        <input type="text" id="num" placeholder="Enter Table no">
+        <button type="button" id="btn" onclick="table()">Give Table</button>
+        <br>
+        Table:
+        <br>
+        <textarea name="Table" id="ans" cols="20" rows="15" 
+        placeholder="Table will appear here!"></textarea>
+        <div id="mydiv"></div>
+    </body>
+</html>

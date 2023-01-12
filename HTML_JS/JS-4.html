@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Calculator</title>
+        <style>
+            #btn:hover{
+                background-color: greenyellow;
+                scale: 1.1;
+            }
+        </style>
+        <script>
+        function calculate(){
+            var num1=parseInt(document.getElementById("n1").value);
+            var num2=parseInt(document.getElementById("n2").value);
+            var o=document.getElementsByName("operator");
+            if(isNaN(num1) || isNaN(num2)){
+                alert("ENTER VALID NUMBER!")
+            }else{
+                var nop=true;
+            for(i=0;i<o.length;i++)
+            {   
+                var flag = o[i].checked;
+                if(flag==true)
+                {
+                    var op=o[i].value;
+                    nop=true;
+                    break;
+                }else{
+                    nop=false;
+                }
+            }
+            if(nop==false){
+                alert("SELECT VALID OPERATION!")
+            }else{
+                var answer=null;
+            switch(op)
+            {
+                case'+':answer=num1+num2; break;
+                case'-':answer=num1-num2; break;
+                case'*':answer=num1*num2; break;
+                case'/':answer=num1/num2; break;
+            }
+            document.getElementById("ans").value=answer;
+            }
+        }
+            }
+        </script>
+    </head>
+    <body>
+        <label for="n1">Num 1: </label>
+        <input type="number" id="n1" placeholder="Enter Number" required>
+        <label for="n2">Num 2: </label>
+        <input type="number" id="n2" placeholder="Enter Number" required>
+        <br>
+        <input type="radio" id="o1" name="operator" value="+">
+        <label for="o1">+ (Addition)</label><br>
+        <input type="radio" id="o2" name="operator" value="-">
+        <label for="o2">- (Substraction)</label><br>
+        <input type="radio" id="o3" name="operator" value="*">
+        <label for="o3">* (Multiplication)</label><br>
+        <input type="radio" id="o4" name="operator" value="/">
+        <label for="o4">/ (Divide)</label><br>
+        <br>
+        <button type="button" id="btn" onclick="calculate()">Calculate</button>
+        <input type="text" name="ans" id="ans" placeholder="Answer">
+        <div id="mm"></div>
+    </body>
+</html>

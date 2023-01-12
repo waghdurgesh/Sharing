@@ -1,0 +1,41 @@
+<html>
+    <head>
+        <script>
+
+            function Task(event){
+
+               var num1=parseInt(document.getElementById("num1").value);
+               var num2=parseInt(document.getElementById("num2").value);
+
+                switch(event.target.id)
+                {
+                    case "btn1" :
+                        document.write(`Addition is : ${num1+num2}`);
+                    break;
+                    case "btn2" :
+                        document.write(`sub is : ${num1-num2}`);
+                    break;
+                    case "btn3" :
+                        document.write(`mult is : ${num1*num2}`);
+                    break;
+                    case "btn4" :
+                        document.write(`div is : ${num1/num2}`);
+                    break;
+                }
+            }
+
+        </script>
+
+    </head>
+    <body>
+        <label for="num1">num1</label>
+        <input type="number" id="num1"><br>
+        <label for="num1">num2</label>
+        <input type="number" id="num2"><br>
+        <button type="button" value="+" onclick="Task(event)" id="btn1">+</button>
+        <button type="button" value="-" onclick="Task(event)" id="btn2">-</button>
+        <button type="button" value="*" onclick="Task(event)" id="btn3">*</button>
+        <button type="button" value="/" onclick="Task(event)" id="btn4">/</button>
+
+    </body>
+</html>
