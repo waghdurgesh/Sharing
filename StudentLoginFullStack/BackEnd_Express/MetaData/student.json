@@ -1,0 +1,46 @@
+[{
+  "roll_no": 1,
+  "name": "durgesh",
+  "course": "dac",
+  "birthdate": "1996-10-11",
+  "marks": 80,
+  "phone": {
+    "$numberLong": "9012457896"
+  }
+},{
+  "roll_no": 2,
+  "name": "aniket",
+  "course": "ditis",
+  "birthdate": "1996-10-11",
+  "marks": 70,
+  "phone": {
+    "$numberLong": "8012457896"
+  }
+},{
+  "roll_no": 3,
+  "name": "sourav",
+  "course": "dbda",
+  "birthdate": "1996-10-11",
+  "marks": 70,
+  "phone": {
+    "$numberLong": "7012457896"
+  }
+},{
+  "roll_no": 4,
+  "name": "eklavya",
+  "course": "dac",
+  "birthdate": "1996-10-11",
+  "marks": 50,
+  "phone": {
+    "$numberLong": "9012457896"
+  }
+},{
+  "roll_no": 5,
+  "name": "Akshay",
+  "course": "dbda",
+  "birthdate": "1998-11-11",
+  "marks": 60,
+  "phone": {
+    "$numberLong": "9012452315"
+  }
+}]
