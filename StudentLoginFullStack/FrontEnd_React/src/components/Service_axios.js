@@ -1,17 +1,17 @@
 import axios from 'axios';
-
+const baseUrl = "http://localhost:6969/";
 class Service_axios {
-    constructor() {
-        this.baseUrl = "http://localhost:6969/"
-    }
+  
+      
+    
     displaylist() {
-        return axios.get(this.baseUrl + "student");
+        return axios.get(baseUrl + "student");
     }
     insertlist(obj) {
-        return axios.post(this.baseUrl + "student", obj);
+        return axios.post(baseUrl + "student", obj);
     }
     deletelist(id) {
-        return axios.delete(this.baseUrl + "student/" + id);
+        return axios.delete(baseUrl + "student/" + id);
     }
 }
 export default new Service_axios();

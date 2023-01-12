@@ -8,13 +8,10 @@ function App() {
     <div>
       <div className="container">
         <div className="row">
-          <div className="col-sm-12 col-md-6">
+          <div className="col-sm-8">
             <Routes>
               <Route path="/" exact element={<Displaylist />} />
-            {/* </Routes>
-          </div>
-          <div className="col-sm-12 col-md-6">
-            <Routes> */}
+            
               <Route path="/addstud" element={<Insertform />} />
             </Routes>
           </div>

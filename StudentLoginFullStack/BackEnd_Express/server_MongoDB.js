@@ -4,9 +4,6 @@ var path = require("path");
 var mongoose = require('mongoose');
 var bodyparser = require('body-parser');
 var router = require('./routes/routers');
-// const cors = require('cors');
-// app.use(cors);
-
 
 //connection
 mongoose.promise = global.promise;
@@ -25,19 +22,16 @@ mongoose.connect(url, {
 //middleware
 app.use(bodyparser.json());
 app.use(bodyparser.urlencoded({ extended: false }));
-app.use(express.static(path.join(__dirname, "public")));
-app.use(function (req, resp, next) {
-    resp.setHeader('Access-control-Allow-origin', '*');
-    resp.setHeader('Access-Control-Allow-Methods', 'GET', 'POST', 'PUT', 'DELETE');
-    resp.setHeader('Access-Control-Allow-Credentials', true);
-    resp.setHeader('Access-Control-Allow-Headers', 'Content-Type');
+app.use(function (req, res, next) {
+
+    res.setHeader('Access-Control-Allow-Origin', '*');
+    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
+    res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
+    res.setHeader('Access-Control-Allow-Credentials', true);
     next();
-});
-
-
+ });
 
 app.use("/", router);
-
 
 //server
 app.listen(6969);

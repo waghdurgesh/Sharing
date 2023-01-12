@@ -28,16 +28,16 @@ const Displaylist = () => {
     }, [flag]);
 
 const DeleteStudent=(id)=>{
-    alert("delete")
+   
     Service_axios.deletelist(id).then((response)=>{
         console.log("Inside DeleteStudent");
+        alert("Deleted Succcesfully!");
         setflag(true);
+
     }).catch((err)=>{
         console.log("Error In Delete", err)
     })
 }
-
-
     const renderList = () => {
         return studentarr.map((std) => <tr key={std.roll_no}>
             <td>{std.roll_no}</td>
@@ -46,11 +46,14 @@ const DeleteStudent=(id)=>{
             <td>{std.birthdate}</td>
             <td>{std.marks}</td>
             <td>{std.phone}</td>
-            <button type="button" name='btn' id="delete" onClick={() => DeleteStudent(std.roll_no)}><Trash /></button>
+            <td><button class="ops" type="button" name='btn' id="edit" ><PenFill /></button>
+            <button class="ops" type="button" name='btn' id="delete" onClick={() => DeleteStudent(std.roll_no)}><Trash /></button>
+            </td>
         </tr>)
+        
     }
     return (
-        <div>
+        <div className='col-sm-12'>
             <h1>Student Details</h1>
             <table border="2px">
                 <thead>
@@ -61,6 +64,7 @@ const DeleteStudent=(id)=>{
                         <th>DOA</th>
                         <th>Marks</th>
                         <th>Phone No.</th>
+                        <th>Change</th>
                     </tr>
                 </thead>
                 <tbody>
