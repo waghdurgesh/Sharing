@@ -1,0 +1,8 @@
+.row{
+    border: 1px dashed grey;
+    border-radius: 20px;
+    padding: 1%;
+    margin: auto;
+    align-self: flex-start;
+    /* color: blue; */
+}

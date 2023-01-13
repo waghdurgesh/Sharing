@@ -1,0 +1,13 @@
+.emphead{
+    border: 2px solid red;
+    border-radius: 6px;
+    background-color: chartreuse;
+    color: black;
+    margin: 3%;
+    padding: 1%;
+    text-align: center;
+}
+/* .emphead:hover{
+    border: 5px dashed blue;
+    scale: 1.05;
+} */

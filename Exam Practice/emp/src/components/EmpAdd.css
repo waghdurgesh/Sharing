@@ -1,0 +1,7 @@
+.formdiv{
+    border: 1px solid red;
+    border-radius: 20px;
+    padding: 3%;
+    margin: auto;
+    align-self: flex-start;
+}
